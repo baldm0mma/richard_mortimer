@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getAllCharacters } from '../apiCalls/apiCalls';
-import { sendAllCharacters, sendSingleCharacter } from '../actions';
+import { sendAllCharacters } from '../actions';
+import { Route } from 'react-router-dom';
+import AllCharacters from './AllCharacters';
 import './App.css';
 
 export class App extends Component {
@@ -13,11 +15,13 @@ export class App extends Component {
   }
 
   render = () => {
-    return <div>hello world</div>
+    return (
+      <Route exact path='/main' component={AllCharacters}></Route>
+    )
   }
 }
 
-export const mapStatetoProps = ({ allCharacters, currentCharacter, page }) => ({
+export const mapStateToProps = ({ allCharacters, currentCharacter, page }) => ({
   allCharacters,
   currentCharacter,
   page
@@ -27,4 +31,4 @@ export const mapDispatchToProps = dispatch => ({
   onReceivingAllCharacters: (results) => dispatch(sendAllCharacters(results))
 })
 
-export default connect(mapStatetoProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
