@@ -1,8 +1,8 @@
-export const allCharactersReducer = (state = {}, action) => {
+export const allCharactersReducer = (state = [], action) => {
   const { type } = action;
   switch (type) {
     case 'SEND_ALL_CHARACTERS':
-      return { allCharacters: action.allCharacters }
+      return [...state, ...action.allCharacters];
     default:
       return state;
   }
