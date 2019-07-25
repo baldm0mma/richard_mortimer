@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getAllCharacters } from './apiCalls';
+import { getAllCharacters } from '../apiCalls/apiCalls';
 import './App.css';
 
 export class App extends Component {
