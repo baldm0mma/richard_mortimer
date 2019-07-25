@@ -4,6 +4,5 @@ import { singleCharacterReducer } from './singleCharacterReducer'
 
 export const rootReducer = combineReducers({
   allCharacters: allCharactersReducer,
-  currentCharacter: singleCharacterReducer,
-  password: 'wldd'
+  currentCharacter: singleCharacterReducer
 })
