@@ -1,8 +1,8 @@
 import { allCharactersUrl } from './urls';
 
-export const getAllCharacters = async () => {
+export const getAllCharacters = async num => {
   try {
-    const response = await fetch(allCharactersUrl);
+    const response = await fetch(allCharactersUrl(num));
     const parsed = await response.json();
     return parsed.results;
   } catch (error) {
