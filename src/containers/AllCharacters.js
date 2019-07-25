@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sendSingleCharacter } from '../actions';
+import { Card } from '../components/Card';
 
 export class AllCharacters extends Component {
 
   iterateCaracters = () => {
     const { allCharacters } = this.props;
     return allCharacters.map(character => {
-      return <p>{character.id}</p>
+      // console.log(character);
+      return <Card character={character} />
     });
   }
 
