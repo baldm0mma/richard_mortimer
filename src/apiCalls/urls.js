@@ -1,1 +1,1 @@
-export const allCharactersUrl = 'https://rickandmortyapi.com/api/character/';
+export const allCharactersUrl = num => `https://rickandmortyapi.com/api/character/?page=${num}`;

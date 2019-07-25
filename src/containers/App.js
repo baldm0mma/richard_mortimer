@@ -7,7 +7,7 @@ import './App.css';
 export class App extends Component {
 
   componentDidMount = async () => {
-    const results = await getAllCharacters();
+    const results = await getAllCharacters(this.props.page);
     console.log(results);
     this.props.onReceivingAllCharacters(results);
   }
@@ -17,9 +17,10 @@ export class App extends Component {
   }
 }
 
-export const mapStatetoProps = ({ allCharacters, currentCharacter }) => ({
+export const mapStatetoProps = ({ allCharacters, currentCharacter, page }) => ({
   allCharacters,
-  currentCharacter
+  currentCharacter,
+  page
 });
 
 export const mapDispatchToProps = dispatch => ({

@@ -6,4 +6,4 @@ export const allCharactersReducer = (state = [], action) => {
     default:
       return state;
   }
-}
+};

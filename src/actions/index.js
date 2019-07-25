@@ -7,3 +7,11 @@ export const sendSingleCharacter = character => ({
   type: 'SEND_SINGLE_CHARACTER',
   character
 });
+
+export const incrementPage = () => ({
+  type: 'INCREMENT_PAGE'
+})
+
+export const decrementPage = () => ({
+  type: 'DECREMENT_PAGE'
+})
