@@ -14,9 +14,9 @@ export class App extends Component {
     const results = await getAllCharacters(this.props.page);
     // console.log('fetch results', results);
     this.props.onReceivingAllCharacters(results);
-    const name = randomizeNames();
+    const name = await randomizeNames();
     // console.log('name', name);
-    await this.props.getUserName(name);
+    this.props.getUserName(name);
   }
 
   render = () => {
@@ -29,11 +29,11 @@ export class App extends Component {
   }
 }
 
-export const mapStateToProps = ({ allCharacters, currentCharacter, page, userName }) => ({
+export const mapStateToProps = ({ page, userName }) => ({
   // allCharacters,
   // currentCharacter,
   page,
-  // userName
+  userName
 });
 
 export const mapDispatchToProps = dispatch => ({
