@@ -4,14 +4,13 @@ import { sendSingleCharacter } from '../actions';
 import { Card } from '../components/Card';
 
 export class AllCharacters extends Component {
-
   iterateCaracters = () => {
     const { allCharacters } = this.props;
     return allCharacters.map(character => {
       // console.log(character);
-      return <Card character={character} />
+      return <Card character={character} key={character.id} />;
     });
-  }
+  };
 
   render = () => {
     return <section>{this.iterateCaracters()}</section>;

@@ -4,6 +4,7 @@ import { getAllCharacters } from '../apiCalls/apiCalls';
 import { sendAllCharacters } from '../actions';
 import { Route } from 'react-router-dom';
 import AllCharacters from './AllCharacters';
+import { Monitor } from './'
 import './App.css';
 
 export class App extends Component {
@@ -16,7 +17,10 @@ export class App extends Component {
 
   render = () => {
     return (
-      <Route exact path='/main' component={AllCharacters}></Route>
+      <>
+        <Route exact path='/' component={Monitor}></Route>
+        <Route path='/main' component={AllCharacters}></Route>
+      </>
     )
   }
 }
