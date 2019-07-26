@@ -15,6 +15,7 @@ describe('Api calls', () => {
       });
     });
   });
+
   describe('getAllCharacters', () => {
     it('should be called with the correct url', () => {
       getAllCharacters();
@@ -24,6 +25,17 @@ describe('Api calls', () => {
     it('should return a parsed result', async () => {
       const result = await getAllCharacters();
       expect(result).toEqual(mockAllCharacters);
+    });
+
+    it('should return an error if ok is false', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: false
+        });
+      });
+      expect(getAllCharacters()).rejects.toEqual(
+        Error('Cannot fetch data at this time')
+      );
     });
   });
 });
