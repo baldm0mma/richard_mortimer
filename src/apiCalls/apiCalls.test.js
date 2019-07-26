@@ -11,7 +11,7 @@ describe('Api calls', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
-        json: () => Promise.resolve(mockAllCharacters)
+        json: () => Promise.resolve({results: mockAllCharacters})
       });
     });
   });
