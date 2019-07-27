@@ -3,9 +3,10 @@ export const sendAllCharacters = allCharacters => ({
   allCharacters
 });
 
-export const focusSingleCharacter = id => ({
+export const focusSingleCharacter = (id, name) => ({
   type: 'SEND_SINGLE_CHARACTER',
-  id
+  id,
+  name
 });
 
 export const userName = name => ({
