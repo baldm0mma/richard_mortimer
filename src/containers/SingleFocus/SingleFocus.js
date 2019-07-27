@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Typist from 'react-typist';
 import './SingleFocus.css';
 
@@ -12,7 +12,7 @@ export const SingleFocus = props => {
   const allAssociates = () => {
     return focusedCharacter.episode.reduce((associates, episode) => {
       props.allCharacters.forEach(character => {
-        if (character.episode.includes(episode)) {
+        if (character.episode.includes(episode) && character.id !== focusedCharacter.id) {
           associates.push(character);
         }
       });
@@ -31,7 +31,9 @@ export const SingleFocus = props => {
   return (
     <section className='all_specific_content'>
       <header>
-        <p>Back To Database</p>
+        <Link className='link_back' to='/criminals'>
+          <p>Back To Database</p>
+        </Link>
         <p>Log Out</p>
       </header>
       <div className='styling_container'>

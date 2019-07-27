@@ -62,3 +62,8 @@ header {
   border: 2px solid #7edf7e;
   border-radius: 29px;
 }
+
+.link_back {
+  text-decoration: none;
+  color: #7edf7e;
+}
