@@ -1,21 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Typist from 'react-typist';
-import './Monitor.scss';
+import { Link } from 'react-router-dom';
+import './Monitor.css';
 
-export class Monitor extends Component {
-  constructor() {
-    super();
-    this.state = {
-      counter: 0,
-    };
-  }
-
-  login = () => {
+export const Monitor = ({ userName }) => {
+  const login = () => {
     return (
-      <section>
-        <Typist avgTypingDelay={50}>
-          {`Hello ${this.props.userName}, your Interdimentional Criminal Code Enforcement Organization login credentials have been accepted...`}
+      <section className='type_container'>
+        <Typist avgTypingDelay={30}>
+          {`Hello Officer ${userName}, your Interdimentional Criminal Code Enforcement Organization login credentials have been accepted...`}
           <br />
           <Typist.Delay ms={1000} />
           {`Please wait while we log you in...`}
@@ -29,27 +23,32 @@ export class Monitor extends Component {
           <Typist.Delay ms={1000} />
           {`...`}
           <br />
+          <Typist.Delay ms={1500} />
+          {`Login successful`}
+          <br />
+          <br />
           <Typist.Delay ms={1000} />
-          {`...`}
+          {`I am G.L.E.A, the AI in control of this GALACTIC LAW ENFORCEMENT ATLAS terminal.`}
+          <br />
+          <Typist.Delay ms={1000} />
+          {`My database contains information on some of the most brutalizing and vile criminals in the known multiverse.`}
           <br />
           <br />
           <Typist.Delay ms={2000} />
-          {`I am G.L.E.A, the AI in charge of the Galictic Law Enforcement Atlas. My database contains information on some of the most vicious and vile criminals in the know multivers; along with thier known associates.`}
+          {`${userName}, your active status has been reinstated by the Intergalactic Council on Multiverse Security and Defense to assist in the SWIFT DISTRIBUTION OF JUSTICE AND PUNISHMENT to these notorious villains.`}
           <br />
-          <Typist.Delay ms={2000} />
-          {`${this.props.userName}, you have summoned here by the Intergalactic Council on Multiverse Security and Defense to assist in the apprehension, incarceration, and service of justice to these noxious villians.`}
           <br />
-          <Typist.Delay ms={3000} />
-          {`We wish you all the best in your hunt, ${this.props.userName}...`}
+          <Typist.Delay ms={1000} />
+          <Link to='/main' className='proceed-link'>
+            Proceed to database?
+          </Link>
         </Typist>
       </section>
     );
   };
 
-  render = () => {
-    return <section>{this.props.userName && this.login()}</section>;
-  };
-}
+  return <section>{userName && login()}</section>;
+};
 
 export const mapStateToProps = ({ userName, page }) => ({
   userName,
