@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { focusSingleCharacter } from '../actions';
-import Card from '../components/Card';
+import { focusSingleCharacter } from '../../actions';
+import Card from '../Card/Card';
 import './AllCharacters.css';
 
 export const AllCharacters = ({ allCharacters }) => {

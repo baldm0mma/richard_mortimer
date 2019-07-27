@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getAllCharacters } from '../apiCalls/apiCalls';
-import { sendAllCharacters, userName } from '../actions';
+import { getAllCharacters } from '../../apiCalls/apiCalls';
+import { sendAllCharacters, userName } from '../../actions';
 import { Route } from 'react-router-dom';
-import AllCharacters from './AllCharacters';
-import Monitor from './Monitor';
-import { randomizeNames } from '../randomNames';
+import AllCharacters from '../AllCharacters/AllCharacters';
+import Monitor from '../Monitor/Monitor';
+import { randomizeNames } from '../../randomNames';
 import './App.css';
 
 export class App extends Component {
@@ -16,7 +16,7 @@ export class App extends Component {
   }
 
   componentDidUpdate = async () => {
-    for (let i = 1; i < 26; i++) {
+    for (let i = 1; i < 2; i++) {
       const results = await getAllCharacters(i);
       await this.props.onReceivingAllCharacters(results);
     }
@@ -26,7 +26,7 @@ export class App extends Component {
     return (
       <main>
         <Route exact path='/' component={Monitor}></Route>
-        <Route path='/criminals' component={AllCharacters}></Route>
+        <Route exact path='/criminals' component={AllCharacters}></Route>
       </main>
     )
   }
