@@ -1,24 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { sendSingleCharacter } from '../actions';
 import { Card } from '../components/Card';
 import './AllCharacters.css';
 
-export class AllCharacters extends Component {
-  iterateCaracters = () => {
-    const { allCharacters } = this.props;
+export const AllCharacters = ({ allCharacters }) => {
+  const iterateCaracters = () => {
     return allCharacters.map(character => {
-      // console.log(character);
-      return <Card character={character} key={character.id} />;
+      return (
+        <Card character={character} key={character.id} id={character.id} />
+      );
     });
   };
 
-  render = () => {
-    return (
-      <section className='allCharacters'>{this.iterateCaracters()}</section>
-    );
-  };
-}
+  return (
+    <section className='allCharacters'>{iterateCaracters()}</section>
+  );
+};
 
 export const mapStateToProps = ({ allCharacters }) => ({
   allCharacters

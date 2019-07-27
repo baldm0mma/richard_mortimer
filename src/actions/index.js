@@ -8,14 +8,6 @@ export const sendSingleCharacter = character => ({
   character
 });
 
-export const incrementPage = () => ({
-  type: 'INCREMENT_PAGE'
-});
-
-export const decrementPage = () => ({
-  type: 'DECREMENT_PAGE'
-});
-
 export const userName = name => ({
   type: 'USER_NAME',
   name

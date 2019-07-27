@@ -39,7 +39,7 @@ export const Monitor = ({ userName }) => {
           <br />
           <br />
           <Typist.Delay ms={1000} />
-          <Link to='/main' className='proceed-link'>
+          <Link to='/criminals' className='proceed-link'>
             Proceed to database?
           </Link>
         </Typist>
