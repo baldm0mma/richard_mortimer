@@ -5,17 +5,14 @@ import { connect } from 'react-redux';
 import { focusSingleCharacter } from '../../actions';
 
 export const Card = ({ character, onChoosingCriminal }) => {
-  // console.log(onChoosingCriminal);
+  // console.log(character.name);
   const handleClick = () => {
-    onChoosingCriminal(character.id);
-    console.log('worked', character.id)
+    onChoosingCriminal(character.id, character.name);
+    console.log('worked', character.name);
   };
 
   return (
-    <Link
-      to={`/criminals/${character.name}`}
-      className='link_to_single'
-    >
+    <Link to={`/criminals/${character.name}`} className='link_to_single'>
       <article className='allCharacter_card' onClick={handleClick}>
         <h2>{character.name}</h2>
         <img
@@ -29,7 +26,10 @@ export const Card = ({ character, onChoosingCriminal }) => {
 };
 
 export const mapDispatchToProps = dispatch => ({
-  onChoosingCriminal: id => dispatch(focusSingleCharacter(id))
+  onChoosingCriminal: (id, name) => dispatch(focusSingleCharacter(id, name))
 });
 
-export default connect(null, mapDispatchToProps)(Card);
+export default connect(
+  null,
+  mapDispatchToProps
+)(Card);

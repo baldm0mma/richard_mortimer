@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom';
 import AllCharacters from '../AllCharacters/AllCharacters';
 import Monitor from '../Monitor/Monitor';
 import { randomizeNames } from '../../randomNames';
+import { SingleFocus } from '../SingleFocus/SingleFocus';
 import './App.css';
 
 export class App extends Component {
@@ -27,13 +28,15 @@ export class App extends Component {
       <main>
         <Route exact path='/' component={Monitor}></Route>
         <Route exact path='/criminals' component={AllCharacters}></Route>
+        <Route path={`/criminals/${this.props.currentCharacter.name}`} component={SingleFocus}></Route>
       </main>
     )
   }
 }
 
-export const mapStateToProps = ({ userName }) => ({
-  userName
+export const mapStateToProps = ({ userName, currentCharacter }) => ({
+  userName,
+  currentCharacter
 });
 
 export const mapDispatchToProps = dispatch => ({
