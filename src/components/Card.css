@@ -1,0 +1,17 @@
+.allCharacter_card {
+  text-align: center;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  color: #7edf7e;
+  text-shadow: #7edf7e 1px 0 10px;
+}
+
+.link_to_single {
+  text-decoration: none;
+}
+
+.gird_image {
+  border-radius: 29px 29px 29px 29px;
+  border: 2px solid #7edf7e;
+  box-shadow: 10px 10px 29px 2px rgba(126,223,126,0.41);
+}

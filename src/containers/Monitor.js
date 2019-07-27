@@ -1,27 +1,61 @@
 import React from 'react';
-import { randomizeNames } from '../randomNames';
+import { connect } from 'react-redux';
+import Typist from 'react-typist';
+import { Link } from 'react-router-dom';
+import './Monitor.css';
 
-export const Monitor = () => {
-
-  const name = randomizeNames();
-
+export const Monitor = ({ userName }) => {
   const login = () => {
-    return `Hello ${name}, your Interdimentional Criminal Code Enforcement Organization login credentials have been accepted... please wait while we log you in...`
-  }
+    return (
+      <section className='type_container'>
+        <Typist avgTypingDelay={30}>
+          {`Hello Officer ${userName}, your Interdimentional Criminal Code Enforcement Organization login credentials have been accepted...`}
+          <br />
+          <Typist.Delay ms={1000} />
+          {`Please wait while we log you in...`}
+          <br />
+          <Typist.Delay ms={1000} />
+          {`...`}
+          <br />
+          <Typist.Delay ms={1000} />
+          {`...`}
+          <br />
+          <Typist.Delay ms={1000} />
+          {`...`}
+          <br />
+          <Typist.Delay ms={1500} />
+          {`Login successful`}
+          <br />
+          <br />
+          <Typist.Delay ms={1000} />
+          {`I am G.L.E.A, the AI in control of this GALACTIC LAW ENFORCEMENT ATLAS terminal.`}
+          <br />
+          <Typist.Delay ms={1000} />
+          {`My database contains information on some of the most brutalizing and vile criminals in the known multiverse.`}
+          <br />
+          <br />
+          <Typist.Delay ms={2000} />
+          {`${userName}, your active status has been reinstated by the Intergalactic Council on Multiverse Security and Defense to assist in the SWIFT DISTRIBUTION OF JUSTICE AND PUNISHMENT to these notorious villains.`}
+          <br />
+          <br />
+          <Typist.Delay ms={1000} />
+          <Link to='/main' className='proceed-link'>
+            Proceed to database?
+          </Link>
+        </Typist>
+      </section>
+    );
+  };
 
-  const intoToSystem = () => {
-    return 'I am G.L.E.A, the AI in charge of the Galictic Law Enforcement Atlas. My database contains information on some of the most vicious and vile criminals in the know multivers; along with thier known associates.'
-  }
+  return <section>{userName && login()}</section>;
+};
 
-  const callToAction = () => {
-    return `${name}, you have summoned here by the Intergalactic Council on Multiverse Security and Defense to assist in the apprehension, incarceration, and service of justice to these noxious villians.`
-  }
+export const mapStateToProps = ({ userName, page }) => ({
+  userName,
+  page
+});
 
-  const bestWishes = () => {
-    return `We wish you all the best in your hunt, ${name};`
-  }
-
-  return (
-    
-  )
-}
+export default connect(
+  mapStateToProps,
+  null
+)(Monitor);

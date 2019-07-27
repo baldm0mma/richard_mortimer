@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { sendSingleCharacter } from '../actions';
 import { Card } from '../components/Card';
+import './AllCharacters.css';
 
 export class AllCharacters extends Component {
   iterateCaracters = () => {
@@ -13,7 +14,9 @@ export class AllCharacters extends Component {
   };
 
   render = () => {
-    return <section>{this.iterateCaracters()}</section>;
+    return (
+      <section className='allCharacters'>{this.iterateCaracters()}</section>
+    );
   };
 }
 
@@ -25,4 +28,7 @@ export const mapDispatchToProps = dispatch => ({
   onCharacterChoice: id => dispatch(sendSingleCharacter(id))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AllCharacters);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AllCharacters);
