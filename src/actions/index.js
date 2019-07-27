@@ -3,17 +3,9 @@ export const sendAllCharacters = allCharacters => ({
   allCharacters
 });
 
-export const sendSingleCharacter = character => ({
+export const focusSingleCharacter = id => ({
   type: 'SEND_SINGLE_CHARACTER',
-  character
-});
-
-export const incrementPage = () => ({
-  type: 'INCREMENT_PAGE'
-});
-
-export const decrementPage = () => ({
-  type: 'DECREMENT_PAGE'
+  id
 });
 
 export const userName = name => ({
