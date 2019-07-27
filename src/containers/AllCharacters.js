@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { sendSingleCharacter } from '../actions';
-import { Card } from '../components/Card';
+import { focusSingleCharacter } from '../actions';
+import Card from '../components/Card';
 import './AllCharacters.css';
 
 export const AllCharacters = ({ allCharacters }) => {
   const iterateCaracters = () => {
     return allCharacters.map(character => {
       return (
-        <Card character={character} key={character.id} id={character.id} />
+        <Card character={character} key={character.id} />
       );
     });
   };
@@ -23,7 +23,7 @@ export const mapStateToProps = ({ allCharacters }) => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  onCharacterChoice: id => dispatch(sendSingleCharacter(id))
+  onCharacterChoice: id => dispatch(focusSingleCharacter(id))
 });
 
 export default connect(
