@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom';
 import AllCharacters from '../AllCharacters/AllCharacters';
 import Monitor from '../Monitor/Monitor';
 import { randomizeNames } from '../../randomNames';
-import { SingleFocus } from '../SingleFocus/SingleFocus';
+import SingleFocus from '../SingleFocus/SingleFocus';
 import './App.css';
 
 export class App extends Component {
@@ -17,9 +17,11 @@ export class App extends Component {
   }
 
   componentDidUpdate = async () => {
-    for (let i = 1; i < 2; i++) {
-      const results = await getAllCharacters(i);
-      await this.props.onReceivingAllCharacters(results);
+    if (!this.props.allCharacters.length) {
+      for (let i = 1; i < 2; i++) {
+        const results = await getAllCharacters(i);
+        await this.props.onReceivingAllCharacters(results);
+      }
     }
   }
 
@@ -34,9 +36,10 @@ export class App extends Component {
   }
 }
 
-export const mapStateToProps = ({ userName, currentCharacter }) => ({
+export const mapStateToProps = ({ userName, currentCharacter, allCharacters }) => ({
   userName,
-  currentCharacter
+  currentCharacter,
+  allCharacters
 });
 
 export const mapDispatchToProps = dispatch => ({
