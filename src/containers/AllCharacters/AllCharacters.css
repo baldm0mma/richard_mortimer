@@ -24,5 +24,7 @@
 }
 
 .allCharacters_styling {
+  margin: 0 auto;
   height: 80px;
+  width: 60%
 }

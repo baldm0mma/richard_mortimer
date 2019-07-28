@@ -18,7 +18,7 @@ export class App extends Component {
 
   componentDidUpdate = async () => {
     if (!this.props.allCharacters.length) {
-      for (let i = 1; i < 5; i++) {
+      for (let i = 1; i < 3; i++) {
         const results = await getAllCharacters(i);
         await this.props.onReceivingAllCharacters(results);
       }
