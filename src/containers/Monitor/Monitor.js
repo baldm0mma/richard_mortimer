@@ -8,7 +8,7 @@ export const Monitor = ({ userName }) => {
   const login = () => {
     return (
       <section className='type_container'>
-        <Typist avgTypingDelay={30}>
+        <Typist avgTypingDelay={40}>
           {`Hello Officer ${userName}, your Interdimentional Criminal Code Enforcement Organization login credentials have been accepted...`}
           <br />
           <Typist.Delay ms={1000} />
