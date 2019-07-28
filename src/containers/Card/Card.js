@@ -16,7 +16,7 @@ export const Card = ({ character, onChoosingCriminal }) => {
       <article className='allCharacter_card grow' onClick={handleClick}>
         <h2>{character.name}</h2>
         <img
-          className='grid_image'
+          className={character.status === 'Dead' ? 'grid_image grey' : 'grid_image'}
           src={character.image}
           alt={`mugshot of ${character.name}`}
         />

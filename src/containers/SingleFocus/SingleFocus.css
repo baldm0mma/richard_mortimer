@@ -46,14 +46,14 @@ header {
 
 .associate_title {
   font-size: 3rem;
-  margin: 10px 0 20px 0;
+  margin: 10px 0 30px 0;
 }
 
 .associate {
   width: 30%;
   border: 2px solid #7edf7e;
   border-radius: 29px;
-  height: 50vh;
+  height: 55vh;
 }
 
 .grow:hover {
@@ -75,7 +75,7 @@ header {
 }
 
 .button {
-  margin: 15px;
+  margin: 20px;
   text-align: center;
   border: 2px solid #7edf7e;
   padding: 10px;
@@ -84,6 +84,11 @@ header {
 
 .outer-database {
   animation: blinker 1s linear infinite;
+  font-size: 1.5rem;
+}
+
+.grey {
+  filter: grayscale(100%);
 }
 
 @keyframes blinker {

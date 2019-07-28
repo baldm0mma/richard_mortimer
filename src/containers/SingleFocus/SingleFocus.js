@@ -44,7 +44,7 @@ export const SingleFocus = props => {
       </header>
       <div className='styling_container'>
         <aside className='focus_details'>
-          <img className='associate_img' src={focusedCharacter.image} alt={`mugshot of...`}></img>
+          <img className={focusedCharacter.status === 'Dead' ? 'associate_img grey' : 'associate_img'} src={focusedCharacter.image} alt={`mugshot of ${focusedCharacter.name}`}></img>
           <h1>Name: {focusedCharacter.name}</h1>
           <p>Status: {focusedCharacter.status}</p>
           <p>Species: {focusedCharacter.species}</p>
@@ -62,6 +62,8 @@ export const SingleFocus = props => {
                 <p>Name: {topAssociates()[0].name}</p>
                 <p>Species: {topAssociates()[0].species}</p>
                 <p>Status: {topAssociates()[0].status}</p>
+                <p>Origin: {topAssociates()[0].origin.name}</p>
+                <p>Current Location: {topAssociates()[0].location.name}</p>
               </article>
             </Link>
             <Link to={`/criminals/${topAssociates()[1].name}`} className='associate grow 2'>
@@ -70,6 +72,8 @@ export const SingleFocus = props => {
                 <p>Name: {topAssociates()[1].name}</p>
                 <p>Species: {topAssociates()[1].species}</p>
                 <p>Status: {topAssociates()[1].status}</p>
+                <p>Origin: {topAssociates()[1].origin.name}</p>
+                <p>Current Location: {topAssociates()[1].location.name}</p>
               </article>
             </Link>
             <Link to={`/criminals/${topAssociates()[2].name}`} className='associate grow 3'>
@@ -78,6 +82,8 @@ export const SingleFocus = props => {
                 <p>Name: {topAssociates()[2].name}</p>
                 <p>Species: {topAssociates()[2].species}</p>
                 <p>Status: {topAssociates()[2].status}</p>
+                <p>Origin: {topAssociates()[2].origin.name}</p>
+                <p>Current Location: {topAssociates()[2].location.name}</p>
               </article>
             </Link>
           </div>

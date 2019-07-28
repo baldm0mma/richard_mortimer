@@ -16,8 +16,11 @@ export const AllCharacters = ({ allCharacters }) => {
 
   return (
     <>
-    <Typist>
-      <h2 className='allCriminals_title'>Please choose from the following wanted criminals</h2>
+    <Typist avgTypingDelay={20}>
+      <div className='allCharacters_styling'>
+        <h2 className='allCriminals_title'>Please choose from the following wanted criminals</h2>
+        <p className='allCriminals_astrix'>*Greyed out criminals are deceased, and have already recieved justice</p>
+      </div>
     </Typist>
     <section className='allCharacters'>{iterateCaracters()}</section>
     </>
