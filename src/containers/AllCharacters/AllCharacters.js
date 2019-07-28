@@ -6,7 +6,6 @@ import './AllCharacters.css';
 
 export const AllCharacters = ({ allCharacters, filter, onfilterChoice }) => {
   const iterateCaracters = () => {
-    // console.log(onfilterChoice)
     return allCharacters.map(character => {
       return <Card character={character} key={character.id} />;
     });

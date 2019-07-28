@@ -5,10 +5,8 @@ import { connect } from 'react-redux';
 import { focusSingleCharacter } from '../../actions';
 
 export const Card = ({ character, onChoosingCriminal }) => {
-  // console.log(character.name);
   const handleClick = () => {
     onChoosingCriminal(character.id, character.name);
-    console.log('worked', character.name);
   };
 
   return (
@@ -16,7 +14,9 @@ export const Card = ({ character, onChoosingCriminal }) => {
       <article className='allCharacter_card grow' onClick={handleClick}>
         <h2>{character.name}</h2>
         <img
-          className={character.status === 'Dead' ? 'grid_image grey' : 'grid_image'}
+          className={
+            character.status === 'Dead' ? 'grid_image grey' : 'grid_image'
+          }
           src={character.image}
           alt={`mugshot of ${character.name}`}
         />
