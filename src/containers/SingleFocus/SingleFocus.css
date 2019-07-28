@@ -46,14 +46,20 @@ header {
 
 .associate_title {
   font-size: 3rem;
-  margin: 10px 0 20px 0;
+  margin: 10px 0 30px 0;
 }
 
 .associate {
   width: 30%;
   border: 2px solid #7edf7e;
   border-radius: 29px;
-  height: 50vh;
+  height: 55vh;
+}
+
+.grow:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .associate_img {
@@ -63,7 +69,30 @@ header {
   border-radius: 29px;
 }
 
-.link_back {
+.link_back, a {
   text-decoration: none;
   color: #7edf7e;
+}
+
+.button {
+  margin: 20px;
+  text-align: center;
+  border: 2px solid #7edf7e;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.outer-database {
+  animation: blinker 1s linear infinite;
+  font-size: 1.5rem;
+}
+
+.grey {
+  filter: grayscale(100%);
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
