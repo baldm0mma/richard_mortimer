@@ -13,7 +13,7 @@ export const Card = ({ character, onChoosingCriminal }) => {
 
   return (
     <Link to={`/criminals/${character.name}`} className='link_to_single'>
-      <article className='allCharacter_card' onClick={handleClick}>
+      <article className='allCharacter_card grow' onClick={handleClick}>
         <h2>{character.name}</h2>
         <img
           className='grid_image'

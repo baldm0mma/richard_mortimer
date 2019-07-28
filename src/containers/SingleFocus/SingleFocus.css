@@ -56,6 +56,12 @@ header {
   height: 50vh;
 }
 
+.grow:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 .associate_img {
   width: 80%;
   margin-top: 20px;
