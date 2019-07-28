@@ -5,3 +5,11 @@
   grid-auto-rows: 400px;
   margin: 15px;
 }
+
+.allCriminals_title {
+  text-align: center;
+  font-family: 'VT323', monospace;
+  font-size: 2.5rem;
+  color: #7edf7e;
+  text-shadow: #7edf7e 1px 0 10px;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { focusSingleCharacter } from '../../actions';
 import Card from '../Card/Card';
+import Typist from 'react-typist';
 import './AllCharacters.css';
 
 export const AllCharacters = ({ allCharacters }) => {
@@ -14,7 +15,12 @@ export const AllCharacters = ({ allCharacters }) => {
   };
 
   return (
+    <>
+    <Typist>
+      <h2 className='allCriminals_title'>Please choose from the following wanted criminals</h2>
+    </Typist>
     <section className='allCharacters'>{iterateCaracters()}</section>
+    </>
   );
 };
 
