@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Typist from 'react-typist';
 import { focusSingleCharacter } from '../../actions';
 import './SingleFocus.css';
 

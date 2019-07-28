@@ -78,8 +78,8 @@ header {
   margin: 20px;
   text-align: center;
   border: 2px solid #7edf7e;
-  padding: 10px;
-  border-radius: 20px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .outer-database {

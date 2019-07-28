@@ -13,3 +13,8 @@ export const userName = name => ({
   type: 'USER_NAME',
   name
 });
+
+export const applyFilter = filter => ({
+  type: 'APPLY_FILTER',
+  filter
+});
