@@ -63,7 +63,25 @@ header {
   border-radius: 29px;
 }
 
-.link_back {
+.link_back, a {
   text-decoration: none;
   color: #7edf7e;
+}
+
+.button {
+  margin: 15px;
+  text-align: center;
+  border: 2px solid #7edf7e;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.outer-database {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
