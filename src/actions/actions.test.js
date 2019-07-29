@@ -1,7 +1,6 @@
 import * as actions from './index';
 
 describe('Actions', () => {
-  let mockPerameter;
 
   it('should have a type of "SEND_ALL_CHARACTERS" and have a payload of allCharacters', () => {
     const allCharacters = [1, 2, 3];
@@ -14,28 +13,34 @@ describe('Actions', () => {
   });
 
   it('should have a type of "SEND_SINGLE_CHARACTER and have a payload of character', () => {
-    const character = { id: 1, name: 'Mr. Poopybutthole' };
+    const id = 1;
+    const name = 'Mr. Poopybutthole';
     const expectedAction = {
       type: 'SEND_SINGLE_CHARACTER',
-      character
+      id,
+      name
     }
-    const result = actions.sendSingleCharacter(character);
+    const result = actions.focusSingleCharacter(id, name);
     expect(result).toEqual(expectedAction);
   });
 
-  it('should have a type of "INCREMENT_PAGE", but no payload', () => {
+  it('should have a type of "USER_NAME" and have a payload of the users random name', () => {
+    const name = 'Spanky Spankpants';
     const expectedAction = {
-      type: 'INCREMENT_PAGE',
+      type: 'USER_NAME',
+      name
     }
-    const result = actions.incrementPage();
+    const result = actions.userName(name);
     expect(result).toEqual(expectedAction);
   });
 
-  it('should have a type of "DECREMENT_PAGE", but no payload', () => {
+  it('should have a type of "APPLY_FILTER" and have a payload of the chosen filter', () => {
+    const filter = 'dead';
     const expectedAction = {
-      type: 'DECREMENT_PAGE'
+      type: 'APPLY_FILTER',
+      filter
     }
-    const result = actions.decrementPage();
+    const result = actions.applyFilter(filter);
     expect(result).toEqual(expectedAction);
   });
 
