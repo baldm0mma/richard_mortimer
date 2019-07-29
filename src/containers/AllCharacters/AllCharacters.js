@@ -5,9 +5,6 @@ import Card from '../Card/Card';
 import './AllCharacters.css';
 
 export class AllCharacters extends Component {
-  constructor(props) {
-    super();
-  }
 
   componentDidUpdate = () => {
     this.iterateCaracters();
