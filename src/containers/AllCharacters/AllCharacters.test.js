@@ -8,10 +8,15 @@ import {
 import { applyFilter } from '../../actions';
 
 describe('All Characters', () => {
-  let wrapper, props, allChars;
+  let wrapper, props, allChars, mockEvent;
 
-  describe('filters', () => {
+  describe('filters and methods', () => {
     beforeEach(() => {
+      mockEvent = {
+        target: {
+          id: 1
+        }
+      };
       allChars = [{ id: 1, status: 'Alive' }, { id: 2, status: 'Dead' }];
       props = {
         allCharacters: allChars,

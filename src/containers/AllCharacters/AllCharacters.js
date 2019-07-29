@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { applyFilter } from '../../actions';
-import Card from '../Card/Card';
 import './AllCharacters.css';
+import { applyFilter } from '../../actions';
+import { connect } from 'react-redux';
+import Card from '../Card/Card';
+import React, { Component } from 'react';
 
 export class AllCharacters extends Component {
   constructor() {
@@ -51,9 +51,7 @@ export class AllCharacters extends Component {
 
   handleChange = e => {
     const search = e.target.value.toLowerCase();
-    this.setState({ searchTerm: search }, () =>
-      console.log(this.state.searchTerm)
-    );
+    this.setState({ searchTerm: search });
   };
 
   handleClick = e => {

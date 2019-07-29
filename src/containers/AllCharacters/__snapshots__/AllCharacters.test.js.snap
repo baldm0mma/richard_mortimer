@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`All Characters filters should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`All Characters filters and methods should match the snapshot 1`] = `ShallowWrapper {}`;
