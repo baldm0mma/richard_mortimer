@@ -8,10 +8,15 @@ import {
 import { applyFilter } from '../../actions';
 
 describe('All Characters', () => {
-  let wrapper, props, allChars;
+  let wrapper, props, allChars, mockEvent;
 
-  describe('filters', () => {
+  describe('filters and methods', () => {
     beforeEach(() => {
+      mockEvent = {
+        target: {
+          id: 1
+        }
+      }
       allChars = [{ id: 1, status: 'Alive' }, { id: 2, status: 'Dead' }];
       props = {
         allCharacters: allChars,
@@ -43,6 +48,13 @@ describe('All Characters', () => {
     it('should filter through all characters and only return the characters that are dead', () => {
       expect(wrapper.instance().deadCharacters().length).toEqual(1);
     });
+
+    // it('should invoke onFilterChoice() when handleClick() is invoked', () => {
+    //   wrapper.props.onFilterChoice = jest.fn();
+    //   expect(wrapper.props.onFilterChoice).not.toHaveBeenCalledTimes(1);
+    //   wrapper.instance().handleClick(mockEvent);
+    //   expect(wrapper.props.onFilterChoice).toHaveBeenCalledTimes(1);
+    // });
   });
 
   describe('mapStateToProps', () => {

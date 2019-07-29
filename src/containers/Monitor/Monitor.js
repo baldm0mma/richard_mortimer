@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Typist from 'react-typist';
 import { Link } from 'react-router-dom';
 import './Monitor.css';
 
-export const Monitor = ({ userName }) => {
-  const login = () => {
+export class Monitor extends Component {
+  login = () => {
     return (
       <>
         <header className='type_header'>
@@ -15,7 +15,9 @@ export const Monitor = ({ userName }) => {
         </header>
         <section className='type_container'>
           <Typist avgTypingDelay={40}>
-            {`Hello Officer ${userName}, your Interdimentional Criminal Code Enforcement Organization login credentials have been accepted...`}
+            {`Hello Officer ${
+              this.props.userName
+            }, your Interdimentional Criminal Code Enforcement Organization login credentials have been accepted...`}
             <br />
             <Typist.Delay ms={1000} />
             {`Please wait while we log you in...`}
@@ -41,7 +43,9 @@ export const Monitor = ({ userName }) => {
             <br />
             <br />
             <Typist.Delay ms={2000} />
-            {`${userName}, your active status has been reinstated by the Intergalactic Council on Multiverse Security and Defense to assist in the SWIFT DISTRIBUTION OF JUSTICE AND PUNISHMENT to these notorious villains.`}
+            {`${
+              this.props.userName
+            }, your active status has been reinstated by the Intergalactic Council on Multiverse Security and Defense to assist in the SWIFT DISTRIBUTION OF JUSTICE AND PUNISHMENT to these notorious villains.`}
             <br />
             <br />
             <Typist.Delay ms={1000} />
@@ -54,12 +58,13 @@ export const Monitor = ({ userName }) => {
     );
   };
 
-  return <section>{userName && login()}</section>;
-};
+  render = () => {
+    return <section>{this.props.userName && this.login()}</section>;
+  };
+}
 
-export const mapStateToProps = ({ userName, page }) => ({
-  userName,
-  page
+export const mapStateToProps = ({ userName }) => ({
+  userName
 });
 
 export default connect(

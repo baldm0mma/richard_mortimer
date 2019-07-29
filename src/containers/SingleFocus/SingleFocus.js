@@ -29,7 +29,6 @@ export const SingleFocus = props => {
   };
 
   const handleClick = (id, name) => {
-    console.log(id, name);
     props.onChoosingCriminal(id, name);
   }
 
