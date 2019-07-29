@@ -6,12 +6,11 @@ describe('Api calls', () => {
     { id: 1, name: 'Mr. Poopybutthole' },
     { id: 2, name: 'Noob-Noob' }
   ];
-  // let mockCharacter = { id: 1, name: 'Mr. Poopybutthole' };
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({results: mockAllCharacters})
+        json: () => Promise.resolve({ results: mockAllCharacters })
       });
     });
   });
