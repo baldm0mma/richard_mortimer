@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import './App.css';
 import { connect } from 'react-redux';
 import { getAllCharacters } from '../../apiCalls/apiCalls';
+import { randomizeNames } from '../../randomNames';
+import { Route, Switch } from 'react-router-dom';
 import { sendAllCharacters, userName } from '../../actions';
-import { Route } from 'react-router-dom';
 import AllCharacters from '../AllCharacters/AllCharacters';
 import Monitor from '../Monitor/Monitor';
-import { randomizeNames } from '../../randomNames';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import SingleFocus from '../SingleFocus/SingleFocus';
-import './App.css';
+import { Error } from '../404Error/404Error';
 
 export class App extends Component {
   componentDidMount = async () => {
@@ -27,12 +29,15 @@ export class App extends Component {
   render = () => {
     return (
       <main>
-        <Route exact path='/' component={Monitor} />
-        <Route exact path='/criminals' component={AllCharacters} />
-        <Route
-          path={`/criminals/${this.props.currentCharacter.name}`}
-          component={SingleFocus}
-        />
+        <Switch>
+          <Route exact path='/' component={Monitor} />
+          <Route exact path='/criminals' component={AllCharacters} />
+          <Route
+            path={`/criminals/${this.props.currentCharacter.name}`}
+            component={SingleFocus}
+          />
+          <Route component={Error} />
+        </Switch>
       </main>
     );
   };
@@ -57,3 +62,9 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(App);
+
+App.propTypes = {
+  userName: PropTypes.string,
+  currentCharacter: PropTypes.object,
+  allCharacters: PropTypes.array
+};

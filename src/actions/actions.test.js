@@ -44,4 +44,14 @@ describe('Actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
+  it('should have a type of "THROW_ERROR" and have a payload of the thrown error', () => {
+    const error = 'Cannot even deal with you right now...';
+    const expectedAction = {
+      type: 'THROW_ERROR',
+      error
+    }
+    const result = actions.throwError(error);
+    expect(result).toEqual(expectedAction);
+  });
+
 });

@@ -18,3 +18,8 @@ export const applyFilter = filter => ({
   type: 'APPLY_FILTER',
   filter
 });
+
+export const throwError = error => ({
+  type: 'THROW_ERROR',
+  error
+});
