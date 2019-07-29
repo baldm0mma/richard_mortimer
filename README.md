@@ -68,6 +68,7 @@ As always, writing modular code required careful planning and strategic architec
 * NPM
 * Git and GitHub
 * React Typist
+* PropTypes
 
 ## Project Management
 
