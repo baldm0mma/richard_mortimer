@@ -1,6 +1,6 @@
-import React from 'react';
 import { Monitor, mapStateToProps } from './Monitor';
 import { shallow } from 'enzyme';
+import React from 'react';
 
 describe('Monitor', () => {
   let wrapper;

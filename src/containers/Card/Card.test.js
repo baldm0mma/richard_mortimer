@@ -1,15 +1,15 @@
-import React from 'react';
 import { Card, mapDispatchToProps } from './Card';
-import { shallow } from 'enzyme';
 import { focusSingleCharacter } from '../../actions';
+import { shallow } from 'enzyme';
+import React from 'react';
 
 describe('Card', () => {
   let wrapper;
   let character = { name: 'Mr. Poopybutthole', image: 'http://www.hi.com' };
   let props = {
     onChoosingCriminal: jest.fn()
-  }
-  
+  };
+
   beforeEach(() => {
     wrapper = shallow(<Card character={character} {...props} />);
   });
@@ -37,5 +37,4 @@ describe('Card', () => {
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
   });
-
 });

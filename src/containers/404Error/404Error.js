@@ -1,6 +1,6 @@
+import './404Error.css';
 import React from 'react';
 import Typist from 'react-typist';
-import './404Error.css';
 
 export const Error = () => {
   return (

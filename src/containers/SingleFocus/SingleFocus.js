@@ -1,8 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { focusSingleCharacter } from '../../actions';
 import './SingleFocus.css';
+import { connect } from 'react-redux';
+import { focusSingleCharacter } from '../../actions';
+import { Link } from 'react-router-dom';
+import React from 'react';
 
 export const SingleFocus = props => {
   const focusedCharacter = props.allCharacters.find(
@@ -12,7 +12,10 @@ export const SingleFocus = props => {
   const allAssociates = () => {
     return focusedCharacter.episode.reduce((associates, episode) => {
       props.allCharacters.forEach(character => {
-        if (character.episode.includes(episode) && character.id !== focusedCharacter.id) {
+        if (
+          character.episode.includes(episode) &&
+          character.id !== focusedCharacter.id
+        ) {
           associates.push(character);
         }
       });
@@ -30,7 +33,7 @@ export const SingleFocus = props => {
 
   const handleClick = (id, name) => {
     props.onChoosingCriminal(id, name);
-  }
+  };
 
   return (
     <section className='all_specific_content'>
@@ -38,25 +41,55 @@ export const SingleFocus = props => {
         <Link className='link_back' to='/criminals'>
           <p className='button grow'>Back To Database</p>
         </Link>
-        <a href='https://www.youtube.com/watch?v=dIdk61KN1to'><p className='button grow'>Log Out</p></a>
+        <a href='https://www.youtube.com/watch?v=dIdk61KN1to'>
+          <p className='button grow'>Log Out</p>
+        </a>
       </header>
       <div className='styling_container'>
         <aside className='focus_details'>
-          <img className={focusedCharacter.status === 'Dead' ? 'associate_img grey' : 'associate_img'} src={focusedCharacter.image} alt={`mugshot of ${focusedCharacter.name}`}></img>
+          <img
+            className={
+              focusedCharacter.status === 'Dead'
+                ? 'associate_img grey'
+                : 'associate_img'
+            }
+            src={focusedCharacter.image}
+            alt={`mugshot of ${focusedCharacter.name}`}
+          />
           <h1>Name: {focusedCharacter.name}</h1>
           <p>Status: {focusedCharacter.status}</p>
           <p>Species: {focusedCharacter.species}</p>
           <p>Gender: {focusedCharacter.gender}</p>
           <p>Origin: {focusedCharacter.origin.name}</p>
           <p>Current Location: {focusedCharacter.location.name}</p>
-          <a className='outer-database' target='_blank' rel='noopener noreferrer' href={`http://www.google.com/search?q=rick+and+morty+${focusedCharacter.name}`}>Outer-database Information...</a>
+          <a
+            className='outer-database'
+            target='_blank'
+            rel='noopener noreferrer'
+            href={`http://www.google.com/search?q=rick+and+morty+${
+              focusedCharacter.name
+            }`}
+          >
+            Outer-database Information...
+          </a>
         </aside>
         <section className='associates_container'>
           <h3 className='associate_title'>Known Associates</h3>
           <div className='associates_styling'>
-            <Link to={`/criminals/${topAssociates()[0].name}`} className='associate grow 1'>
-              <article onClick={() => handleClick(topAssociates()[0].id, topAssociates()[0].name)}>
-                <img className='associate_img' src={topAssociates()[0].image} alt={`mugshot of ${topAssociates()[0].name}`}></img>
+            <Link
+              to={`/criminals/${topAssociates()[0].name}`}
+              className='associate grow 1'
+            >
+              <article
+                onClick={() =>
+                  handleClick(topAssociates()[0].id, topAssociates()[0].name)
+                }
+              >
+                <img
+                  className='associate_img'
+                  src={topAssociates()[0].image}
+                  alt={`mugshot of ${topAssociates()[0].name}`}
+                />
                 <p>Name: {topAssociates()[0].name}</p>
                 <p>Species: {topAssociates()[0].species}</p>
                 <p>Status: {topAssociates()[0].status}</p>
@@ -64,9 +97,20 @@ export const SingleFocus = props => {
                 <p>Current Location: {topAssociates()[0].location.name}</p>
               </article>
             </Link>
-            <Link to={`/criminals/${topAssociates()[1].name}`} className='associate grow 2'>
-              <article onClick={() => handleClick(topAssociates()[1].id, topAssociates()[1].name)}>
-                <img className='associate_img' src={topAssociates()[1].image} alt={`mugshot of ${topAssociates()[1].name}`}></img>
+            <Link
+              to={`/criminals/${topAssociates()[1].name}`}
+              className='associate grow 2'
+            >
+              <article
+                onClick={() =>
+                  handleClick(topAssociates()[1].id, topAssociates()[1].name)
+                }
+              >
+                <img
+                  className='associate_img'
+                  src={topAssociates()[1].image}
+                  alt={`mugshot of ${topAssociates()[1].name}`}
+                />
                 <p>Name: {topAssociates()[1].name}</p>
                 <p>Species: {topAssociates()[1].species}</p>
                 <p>Status: {topAssociates()[1].status}</p>
@@ -74,9 +118,20 @@ export const SingleFocus = props => {
                 <p>Current Location: {topAssociates()[1].location.name}</p>
               </article>
             </Link>
-            <Link to={`/criminals/${topAssociates()[2].name}`} className='associate grow 3'>
-              <article onClick={() => handleClick(topAssociates()[2].id, topAssociates()[2].name)}>
-                <img className='associate_img' src={topAssociates()[2].image} alt={`mugshot of ${topAssociates()[2].name}`}></img>
+            <Link
+              to={`/criminals/${topAssociates()[2].name}`}
+              className='associate grow 3'
+            >
+              <article
+                onClick={() =>
+                  handleClick(topAssociates()[2].id, topAssociates()[2].name)
+                }
+              >
+                <img
+                  className='associate_img'
+                  src={topAssociates()[2].image}
+                  alt={`mugshot of ${topAssociates()[2].name}`}
+                />
                 <p>Name: {topAssociates()[2].name}</p>
                 <p>Species: {topAssociates()[2].species}</p>
                 <p>Status: {topAssociates()[2].status}</p>
@@ -105,4 +160,7 @@ export const mapDispatchToProps = dispatch => ({
   onChoosingCriminal: (id, name) => dispatch(focusSingleCharacter(id, name))
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(SingleFocus);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SingleFocus);

@@ -1,5 +1,6 @@
 import './App.css';
 import { connect } from 'react-redux';
+import { Error } from '../404Error/404Error';
 import { getAllCharacters } from '../../apiCalls/apiCalls';
 import { randomizeNames } from '../../randomNames';
 import { Route, Switch } from 'react-router-dom';
@@ -9,7 +10,6 @@ import Monitor from '../Monitor/Monitor';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import SingleFocus from '../SingleFocus/SingleFocus';
-import { Error } from '../404Error/404Error';
 
 export class App extends Component {
   componentDidMount = async () => {
@@ -19,7 +19,7 @@ export class App extends Component {
 
   componentDidUpdate = async () => {
     if (!this.props.allCharacters.length) {
-      for (let i = 1; i < 26; i++) {
+      for (let i = 1; i < 3; i++) {
         const results = await getAllCharacters(i);
         await this.props.onReceivingAllCharacters(results);
       }

@@ -1,8 +1,8 @@
 .error-page {
-  text-align: center;
-  margin-top: 200px;
+  color: #7edf7e;
   font-family: 'VT323', monospace;
   font-size: 3rem;
-  color: #7edf7e;
+  margin-top: 200px;
+  text-align: center;
   text-shadow: #7edf7e 1px 0 10px;
 }

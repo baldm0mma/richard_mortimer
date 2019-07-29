@@ -1,12 +1,12 @@
-import React from 'react';
+import { allChars, singleChar } from '../../mockData';
+import { focusSingleCharacter } from '../../actions';
+import { shallow } from 'enzyme';
 import {
   SingleFocus,
   mapStateToProps,
   mapDispatchToProps
 } from './SingleFocus';
-import { shallow } from 'enzyme';
-import { focusSingleCharacter } from '../../actions';
-import { allChars, singleChar } from '../../mockData';
+import React from 'react';
 
 describe('SingleFocus', () => {
   let wrapper;
@@ -46,5 +46,4 @@ describe('SingleFocus', () => {
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
   });
-
 });

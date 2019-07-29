@@ -1,7 +1,7 @@
-import React from 'react';
-import { shallow } from 'enzyme';
 import { App, mapStateToProps, mapDispatchToProps } from './App';
 import { sendAllCharacters, userName } from '../../actions';
+import { shallow } from 'enzyme';
+import React from 'react';
 
 describe('App', () => {
   let wrapper;

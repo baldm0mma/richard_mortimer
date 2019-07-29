@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Typist from 'react-typist';
-import { Link } from 'react-router-dom';
 import './Monitor.css';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import Typist from 'react-typist';
 
 export class Monitor extends Component {
   login = () => {

@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './containers/App/App';
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import { rootReducer } from './reducers';
+import App from './containers/App/App';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
