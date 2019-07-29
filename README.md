@@ -76,49 +76,33 @@ I used GitHub issues to manage workflow.
 
 ## Project Comps:
 
-### Home Page
+### Intro
 
-![Home Page](./src/images/HomePage.png)
+![Intro Page](./src/assets/Intro_screen.png)
 
-### Search
+### All Characters Display
 
-![Search](./src/images/SearchPage.png)
+![All Characters](./src/assets/All_characters.png)
 
-### Genres
+### Filter Deceased
 
-![Genres](./src/images/GenrePage.png)
+![Filter by deceased](./src/assets/All_deceased.png)
 
-### Genre Page
+### Search Characters
 
-![Genres](./src/images/GenreSpecificPage.png)
+![Search](./src/assets/All_search.png)
 
-### Movie Card
+### Focused Character Display
 
-![Movie Card](./src/images/MovieCardPage.png)
-
-### Favorites
-
-![Favorites](./src/images/FavoritesPages.png)
-
-### Favorites Error
-
-![Favorites Error](./src/images/FavoriteError.png)
-
-### Sign In
-
-![Sign In](./src/images/SignUpPage.png)
-
-### Create Account
-
-![Create Account](./src/images/CreateAccount.png)
+![Focused Character](./src/assets/Focused_char.png)
 
 ### 404 Page
 
-![404 Page](./src/images/404Page.png)
+![404 Page](./src/assets/404_Error.png)
 
 ### GIFS
 
-![GIF](./src/images/betterflix-categories.gif)
+![GIF](https://media.giphy.com/media/UuMzZFSvVZgGaErPez/source.mp4)
 
 
 ![GIF](./src/images/betterflix-home-page.gif)
