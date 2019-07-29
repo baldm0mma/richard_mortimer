@@ -1,6 +1,7 @@
 import './Monitor.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Typist from 'react-typist';
 
@@ -71,3 +72,7 @@ export default connect(
   mapStateToProps,
   null
 )(Monitor);
+
+Monitor.propTypes = {
+  userName: PropTypes.string
+};
