@@ -5,6 +5,12 @@ import Card from '../Card/Card';
 import './AllCharacters.css';
 
 export class AllCharacters extends Component {
+  constructor() {
+    super();
+    this.state = {
+      searchTerm: ''
+    };
+  }
 
   componentDidUpdate = () => {
     this.iterateCaracters();
@@ -34,9 +40,26 @@ export class AllCharacters extends Component {
     });
   };
 
+  searchCharacters = () => {
+    let searched = this.props.allCharacters.filter(character =>
+      character.name.toLowerCase().includes(this.state.searchTerm)
+    );
+    return searched.map(search => {
+      return <Card character={search} key={search.id} />;
+    });
+  };
+
+  handleChange = e => {
+    const search = e.target.value.toLowerCase();
+    this.setState({ searchTerm: search }, () =>
+      console.log(this.state.searchTerm)
+    );
+  };
+
   handleClick = e => {
     const filter = e.target.id;
     this.props.onfilterChoice(filter);
+    this.setState({ searchTerm: '' });
   };
 
   render = () => {
@@ -68,9 +91,21 @@ export class AllCharacters extends Component {
             >
               Show deceased only
             </p>
+            <form>
+              Search:
+              <input
+                className='search_field'
+                type='text'
+                value={this.state.searchTerm}
+                onChange={this.handleChange}
+              />
+            </form>
           </div>
         </header>
-        {this.props.filter === 'all' && (
+        {this.props.filter === 'all' && this.state.searchTerm && (
+          <section className='allCharacters'>{this.searchCharacters()}</section>
+        )}
+        {this.props.filter === 'all' && !this.state.searchTerm && (
           <section className='allCharacters'>{this.iterateCaracters()}</section>
         )}
         {this.props.filter === 'alive' && (

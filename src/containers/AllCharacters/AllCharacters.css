@@ -37,10 +37,31 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   margin: 5px 0 15px 0;
   text-align: center;
   font-family: 'VT323', monospace;
   font-size: 1.4rem;
   color: #7edf7e;
+  text-shadow: #7edf7e 1px 0 10px;
+}
+
+.search_field {
+  border: 2px solid #7edf7e;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  height: 30px;
+  border-radius: 10px;
+  outline-width: 0;
+}
+
+input, select, textarea {
+  padding-left: 10px;
+  color: #7edf7e;
+  font-size: 1em;
+  font-family: 'VT323', monospace;
   text-shadow: #7edf7e 1px 0 10px;
 }
