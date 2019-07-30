@@ -26,7 +26,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Description
 
-This project is Rick and Morty fan app. With the announcement of R&M Season 4 coming this fall, there's a lot of excitement around it's hottly anticipated release. This app is designed to be a endorsement piece; an attempt to keep up the excitement for the upcoming season. There's a bit of gamification, a bit of shameless plugging of Adult Swim, and a LOT of 80's computer styling.
+This project is Rick and Morty fan app. With the announcement of R&M Season 4 coming this fall, there's a lot of excitement around it's hotly anticipated release. This app is designed to be a endorsement piece; an attempt to keep up the excitement for the upcoming season. There's a bit of gamification, a bit of shameless plugging of Adult Swim, and a LOT of 80's computer styling.
 
 ## Project Successes
 
