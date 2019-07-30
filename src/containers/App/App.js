@@ -68,3 +68,4 @@ App.propTypes = {
   currentCharacter: PropTypes.object,
   allCharacters: PropTypes.array
 };
+

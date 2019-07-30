@@ -2,6 +2,7 @@ import './AllCharacters.css';
 import { applyFilter } from '../../actions';
 import { connect } from 'react-redux';
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 export class AllCharacters extends Component {
@@ -130,3 +131,9 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(AllCharacters);
+
+AllCharacters.propTypes = {
+  allCharacters: PropTypes.array,
+  filter: PropTypes.string,
+  onfilterChoice: PropTypes.func
+};

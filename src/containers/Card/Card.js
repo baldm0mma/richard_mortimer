@@ -2,6 +2,7 @@ import './Card.css';
 import { connect } from 'react-redux';
 import { focusSingleCharacter } from '../../actions';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 export class Card extends Component {
@@ -43,3 +44,7 @@ export default connect(
   null,
   mapDispatchToProps
 )(Card);
+
+Card.propTypes = {
+  onChoosingCriminal: PropTypes.func
+};

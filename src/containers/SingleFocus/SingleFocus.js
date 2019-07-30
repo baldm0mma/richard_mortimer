@@ -2,6 +2,7 @@ import './SingleFocus.css';
 import { connect } from 'react-redux';
 import { focusSingleCharacter } from '../../actions';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 export const SingleFocus = props => {
@@ -164,3 +165,10 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SingleFocus);
+
+SingleFocus.propTypes = {
+  allCharacters: PropTypes.array,
+  currentCharacter: PropTypes.object,
+  userName: PropTypes.string,
+  onChoosingCriminal: PropTypes.func
+};
