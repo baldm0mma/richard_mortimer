@@ -50,8 +50,9 @@ As always, writing modular code required careful planning and strategic architec
 
 ## Project Extensions/Issues
 
-* Would love to add R&M specific sounds.
+* Would love to add R&M specific sounds on click and pn page load.
 * Create a bounty system where the user can take a bounty (favorite) out on a character.
+* The search currently only works for the 'show all' category.
 
 ## Project Tech Emphasis
 
