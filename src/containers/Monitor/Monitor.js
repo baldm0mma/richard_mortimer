@@ -51,7 +51,7 @@ export class Monitor extends Component {
             <br />
             <Typist.Delay ms={1000} />
             <Link to='/criminals' className='proceed-link'>
-              Proceed to database?
+              Click here to proceed to database...
             </Link>
           </Typist>
         </section>

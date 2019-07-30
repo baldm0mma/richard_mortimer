@@ -87,7 +87,11 @@ export const SingleFocus = props => {
                 }
               >
                 <img
-                  className='associate_img'
+                  className={
+                    topAssociates()[0].status === 'Dead'
+                      ? 'associate_img grey'
+                      : 'associate_img'
+                  }
                   src={topAssociates()[0].image}
                   alt={`mugshot of ${topAssociates()[0].name}`}
                 />
@@ -108,7 +112,11 @@ export const SingleFocus = props => {
                 }
               >
                 <img
-                  className='associate_img'
+                  className={
+                    topAssociates()[1].status === 'Dead'
+                      ? 'associate_img grey'
+                      : 'associate_img'
+                  }
                   src={topAssociates()[1].image}
                   alt={`mugshot of ${topAssociates()[1].name}`}
                 />
@@ -129,7 +137,11 @@ export const SingleFocus = props => {
                 }
               >
                 <img
-                  className='associate_img'
+                  className={
+                    topAssociates()[2].status === 'Dead'
+                      ? 'associate_img grey'
+                      : 'associate_img'
+                  }
                   src={topAssociates()[2].image}
                   alt={`mugshot of ${topAssociates()[2].name}`}
                 />
