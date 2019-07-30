@@ -9,7 +9,7 @@ export const Error = () => {
       <div>
         <h2 className='error-page'> 404: Page not found </h2>
         <Link to='/criminals'>
-          <p className='back_to_database'>Head back to database...</p>
+          <p className='back_to_database'>Click here to return to database</p>
         </Link>
       </div>
     </Typist>
