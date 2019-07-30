@@ -102,10 +102,13 @@ I used GitHub issues to manage workflow.
 
 ### GIFS
 
-![GIF](https://media.giphy.com/media/UuMzZFSvVZgGaErPez/source.mp4)
+![Intro](./src/assets/Intro.gif)
 
 
-![GIF](./src/images/betterflix-home-page.gif)
+![Main](./src/assets/Main.gif)
+
+
+![Focus](./src/assets/Focus.gif)
 
 
 ## Developers
