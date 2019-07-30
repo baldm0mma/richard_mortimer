@@ -13,6 +13,12 @@ describe('Monitor', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should invoke the login() function when render is invoked', () => {
+    wrapper.instance().login = jest.fn();
+    wrapper.instance().render();
+    expect(wrapper.instance().login).not.toHaveBeenCalled();
+  })
+
   it('should revieve props of the user name', () => {
     const mockState = {
       userName: 'Biff'
