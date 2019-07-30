@@ -115,7 +115,3 @@ I used GitHub issues to manage workflow.
 ## Developers
 
 [Jev Forsberg](https://github.com/baldm0mma)
-
-## Licensing
-
-All credit goes to <a href="turing.io">Turing School of Software</a> for providing the project specifications.
