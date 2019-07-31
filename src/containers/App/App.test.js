@@ -35,9 +35,7 @@ describe('App', () => {
     it('should not invoke getAllCharacters() on CDU if the fetch has already happened', () => {
       wrapper.instance().getAllCharacters = jest.fn();
       wrapper.instance().componentDidUpdate();
-      expect(
-        wrapper.instance().getAllCharacters
-      ).not.toHaveBeenCalled();
+      expect(wrapper.instance().getAllCharacters).not.toHaveBeenCalled();
     });
   });
 
