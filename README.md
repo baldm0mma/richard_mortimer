@@ -1,29 +1,5 @@
 # Richard and Mortimer
 
-
-## Available Scripts
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-## Test Coverage
-
-![Test Coverage](./src/assets/Testing.png)
-
 ## Description
 
 This project is Rick and Morty fan app. With the announcement of R&M Season 4 coming this fall, there's a lot of excitement around it's hotly anticipated release. This app is designed to be a endorsement piece; an attempt to keep up the excitement for the upcoming season. There's a bit of gamification, a bit of shameless plugging of Adult Swim, and a LOT of 80's computer styling.
@@ -63,6 +39,29 @@ As always, writing modular code required careful planning and strategic architec
 ## Project Management
 
 I used GitHub issues to manage workflow.
+
+## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+## Test Coverage
+
+![Test Coverage](./src/assets/Testing.png)
 
 ## Project Comps:
 
